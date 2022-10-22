@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+
 
 class bankAccount extends Controller
 {
@@ -14,9 +17,14 @@ class bankAccount extends Controller
      */
     public function __invoke(Request $request)
     {
+       // $res=DB::raw("select u.income, ba.balance from users u, bank_accounts ba where ui.id=ba.user_id")->getValue();
+
+        $res = DB::table('users')
+                    ->join('bank_accounts','users.id','=','bank_accounts.user_id')
+                    ->select('users.income','bank_accounts.balance')
+                    ->get();
 
 
-
-        return Response(json_encode('In the invoke method'));
+        return Response(json_encode($res,JSON_PRETTY_PRINT));
     }
 }

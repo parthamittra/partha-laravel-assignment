@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('v1')->group(function() {
-    Route::get('/user', \App\Http\Controllers\bankAccount::class);
+    Route::get('/user/bankaccount', \App\Http\Controllers\bankAccount::class);
 
 });
