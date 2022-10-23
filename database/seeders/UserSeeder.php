@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
            "username"=>"User_with_bank_account",
-           "income" => 140000,
+           "income" => 187600,
             "employment_flag" => 1
         ]);
 
