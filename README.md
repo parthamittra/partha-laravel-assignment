@@ -37,4 +37,11 @@
 
 ## Installation instructions
 
-(add your instructions here)
+- Install Laravel and make the .env changes needed to connect to db
+- create the database that matches what is in the .env file
+- Run the migrations and seeders using 'php artisan migrate:fresh --seed '
+- from application root (directory of loan-app) run 'php artisan serve' .   Should run on http://127.0.0.1:8000
+- Open Postman
+- Create a new GET request that goes to http://127.0.0.1:8000/api/v1/user/bankaccount
+- Should see a response with two JSON objects with income and balance for each user
+- The tests are in the tests directory.
